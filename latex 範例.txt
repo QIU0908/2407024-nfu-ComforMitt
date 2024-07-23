@@ -1,0 +1,144 @@
+\documentclass[12pt,a4paper,UTF8]{article}
+% 頁面邊距離設定
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry} 
+% 提供超連結支持
+\usepackage[unicode=true,colorlinks,urlcolor=blue,linkcolor=blue,bookmarksnumbered=true]{hyperref}
+% 數學符號和工具
+\usepackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,amsthm,amsxtra,color,bm,calc,ifpdf}
+\usepackage{graphicx}% 圖形支持
+\usepackage{enumerate}% 自定義列表
+\usepackage{fancyhdr}% 自定義頁眉頁腳
+\usepackage{lipsum} % 引入 lipsum 宏包用於生成示例文本
+\usepackage{etoolbox}
+\usepackage{ifthen} % 引入 ifthen 宏包提供條件判斷功能
+\usepackage{listings}% 代碼列表
+\usepackage{multirow}% 表格中的多行支持
+\usepackage{makeidx}% 索引製作
+\usepackage{xcolor}% 顏色支持
+\usepackage{fontspec}% 字體指定
+\usepackage{subfigure}% 子圖形支持
+\PassOptionsToPackage{hyphens}{url}% URL換行支持
+\usepackage{pythonhighlight}% Python代碼高亮
+\usepackage{tcolorbox}% 彩色文本框
+\usepackage{fontawesome}% 字體圖標
+\usepackage{setspace} % 引入setspace宏包
+\usepackage{xeCJK}
+
+\setCJKmainfont{Noto Serif CJK TC} % 設置繁體中文主字體
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+
+\pagestyle{fancy}
+
+\fancyhf{} % 清除所有頁眉頁腳
+\renewcommand{\headrulewidth}{0pt} % 清除页眉下方的横线
+
+
+\doublespacing % 设置双倍行距。
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+
+\begin{document}
+% 文档开头使用罗马数字页码
+\pagenumbering{roman}
+\fancyfoot[C]{\thepage} % 设置页脚中央为当前页码
+
+  \begin{titlepage}
+    \thispagestyle{fancy} % 應用 fancy 頁腳樣式
+    \fancyfoot[C]{\today} % 僅在這一頁的頁腳中央添加今天的日期
+    \centering % 使後續內容居中
+    \vspace*{10mm} % 調整標題距離頁面頂部的空間
+
+    {\Huge\textbf{國立虎尾科技大學\hspace{0.2cm} 機械設計工程}}\\[20mm] % 學校名稱和系所
+    {\huge\textbf{2a-midag2\hspace{0.2cm} 期中分組報告}}\\[15mm] % 報告類型
+    {\LARGE\textbf{ODOO PLM 在協同產品設計上的應用}}\\[0.2mm] % 報告主題
+    {\LARGE\textbf{以鋼球平衡台機電控制系統設計為例}}\\[15mm] % 報告子題目
+    \Large\noindent\begin{tabular}{l  l}% 使用tabular環境對齊，防止接下來的文字或環境自動縮進 （l表示左對齊）
+     指 導 教 授： & 嚴家銘老師 \\ % 指導教授名稱
+     班 \hspace{0.87cm}級： & 四設二甲 \\ % 班級
+     學 \hspace{0.87cm}生： & 邱翼飛\ \ (41123119)\\[2mm] % 學生姓名和學號
+   \end{tabular}
+\end{titlepage}
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{摘 要}
+
+
+在   在本文中，我們將探討如何有效地使用NX軟體執行零組件繪圖，包括1872版的安裝與可攜版的使用，啟動及連網認證過程，以及啟動後用戶設定檔案的存儲位置。此外，我們將深入了解NX的目錄模組架構和NXOpen Python程式延伸架構，探討Journal程式的設定、建立及執行方法，包括internal及run\_journal.exe的用法。本文還將介紹如何根據設計繪圖選擇尺寸單位，學習草圖建構、參數選用及特徵生成的技巧，並指導如何完成零件組立。\\
+我們將探討零組件轉檔的相關知識，包括選用零組件座標系統、STL格式及尺寸比例的考慮。此外，本文將介紹如何將零組件轉入CoppeliaSim，選擇合適的尺寸及比例，進行場景組件的座標系統轉換，以及設置開放式機構及封閉式機構的場景。\\
+我們還將介紹場景存檔的三種格式（binary與XML間的轉換及應用）及適用時機，探討如何運用Web-based場景模擬串流，學習建立場景控制程式（包括internal Lua、Python、Remoteapi Python、IPv4 Websocket\&ZMQ vs IPv6 Websocket\&ZMQ），並了解如何協同整理資料、編寫網誌、建立網際簡報及結案報告。\\
+通過本文的學習，讀者將能夠充分利用NX軟體在協同產品設計上的強大功能，提高設計效率和質量，並在機電控制系統設計領域中取得更好的成果。
+
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{引言}
+這是引言部分。
+
+\newpage % 從新頁開始顯示正文
+% 生成目錄
+\tableofcontents
+
+% 在适当的位置（比如在第三页的内容开始之前）更改页码编号方式为阿拉伯数字，并自动重置页码计数为1
+\newpage
+\pagenumbering{arabic}
+\fancyfoot[C]{\thepage} % 从这里开始，页脚中央使用阿拉伯数字页码
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{NX安裝與啟動}
+
+\subsection{如何使用1872版安裝及可攜版}
+
+\subsection{如何啓動及連網認證}
+
+\subsection{了解啓動後用戶設定的存檔位置}
+
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{NX 軟體基礎}
+
+\subsection{如何使用 NX 執行零組件繪圖}
+
+\subsection{認識 NX 的目錄模組架構}
+
+\subsection{認識 NXOpen Python 程式延伸架構}
+
+\subsection{了解 Journal 程式設定、建立及執行（internal及\texttt{run\_journal.exe} 用法）}
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{設計與繪圖}
+
+\subsection{了解如何針對設計繪圖尺寸單位選擇}
+
+\subsection{學習草圖建構、參數選用及長出特徵使用}
+
+\subsection{學習如何完成零件組立}
+
+\subsection{了解零組件轉檔相關知識（如選用零組件座標系統、STL格式及尺寸比例）}
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\section{CoppeliaSim 與場景模擬}
+
+\subsection{了解如何轉入 CoppeliaSim，如何選擇合用的尺寸及比例}
+
+\subsection{了解如何進行場景組件的座標系統轉換}
+
+\subsection{了解開放式機構及封閉式機構的場景如何設置}
+
+\subsection{認識場景存檔的三種格式（binary與XML間的轉換及應用)及應用時機}
+\subsection{瞭解如何運用 Web-based 場景模擬串流}
+\subsection{學習如何建立場景控制程式（internal Lua、Python、Remoteapi Python、IPv4 Websocket\&ZMQ vs IPv6 Websocket\&ZMQ)}
+
+\newpage % 從新頁開始顯示正文
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%
+\subsection{了解如何協同整理資料、編寫網誌、建立網際簡報及結案報告}
+
+
+
+
+
+
+
+\end{document}
