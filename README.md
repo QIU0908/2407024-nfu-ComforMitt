@@ -16,7 +16,7 @@ Download
 5.git clone --recurse-submodules https://github.com/QIU0908/2407024-nfu-ComforMitt.git
 
 6. git config --global user.name "John Doe"
-   git config --global user.email "johndoe@example.com" (與github 一樣)
+7. git config --global user.email "johndoe@example.com" (與github 一樣)
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -25,7 +25,8 @@ Branch
 
 2.如果沒有在folder中任意修改一字
 
-3.後git add .    ls(顯示你修改的文件)
+3.後git add .    
+ ls(顯示你修改的文件)
 
 4.git branch  後因該有main or master
 
