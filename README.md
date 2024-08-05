@@ -20,10 +20,13 @@ git branch -d 學號
 7. git commit -m"更新內容敘述"
 8. 第一次使用或要更改位推送分支
 9. git push -u origin 學號
-10. 後續幾次若要更新到同樣分支只需(git push)
+10. 後續幾次若要更新到同樣分支只需(git push)./
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 刪除分支git branch -d 學號(分支名稱)
+
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 Download
 
 1.下載 git 參考 https://www.youtube.com/shorts/JsSmJhCi8-I?feature=share
@@ -38,6 +41,7 @@ Download
 5.git clone --recurse-submodules https://github.com/QIU0908/2407024-nfu-ComforMitt.git
 
 6. git config --global user.name "John Doe"
+
 7. git config --global user.email "johndoe@example.com" (與github 一樣)
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
