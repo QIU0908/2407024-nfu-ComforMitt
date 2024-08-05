@@ -4,12 +4,19 @@ It's a National Formosa University Mechanical Design Engineering Department stud
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 git checkout main
+
 git pull
+
 git branch 學號
+
 git checkout 學號
+
 git add .
+
 git commit -m"更新內容敘述"
+
 git push
+
 git branch -d 學號
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
