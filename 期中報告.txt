@@ -603,7 +603,7 @@ T(s) = \frac{R(s)}{\Theta(s)} = -\frac{1.186}{s^2}
     \item LaTeX模板：\\選擇或設計一個符合項目需求的模板。
       \item 基本語法：\\學習LaTeX的基本語法，如標題、段落、列表、表格、圖片等。
      \item 數學公式：\\使用LaTeX的數學模式來編寫精確的數學公式。
-      \item 文檔編譯：\\使用如Overleaf、TeXShop等工具來編譯LaTeX文檔，生成PDF文件。
+      \item 文檔編譯：\\使用如Overleaf、TeXShop等工具來編譯LaTeX文檔，生成PDF文賤。
 \end{enumerate}
 
 \end{document}
